@@ -4,21 +4,20 @@
     this.noteListView = null
   };
 
-  NoteController.prototype.setNotelist = function () {
+  NoteController.prototype.setNoteList = function() {
     this.noteList.pushToNoteModels(new Note("favourite drink"));
   };
 
-  NoteController.prototype.getNotelist = function () {
+  NoteController.prototype.getNoteList = function() {
     return this.noteList;
   };
 
-  NoteController.prototype.makeNotelistView = function () {
+  NoteController.prototype.setNoteListView = function() {
     this.noteListView = new NoteListView(this.noteList);
   };
 
-  NoteController.prototype.getNLVHtml = function () {
-    var string = this.noteListView.toHtml();
-    console.log(string)
+  NoteController.prototype.getNLVHtml = function() {
+    this.noteListView.toHtml();
     function addNoteToPage(string){}
   };
 
