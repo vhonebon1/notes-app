@@ -5,7 +5,7 @@
   };
 
   NoteController.prototype.setNoteList = function() {
-    this.noteList.pushToNoteModels(new Note("favourite drink"));
+    this.noteList.pushToNotes(new Note("favourite drink"));
   };
 
   NoteController.prototype.getNoteList = function() {
@@ -17,12 +17,12 @@
   };
 
   NoteController.prototype.getNLVHtml = function() {
-    this.noteListView.toHtml();
-    function addNoteToPage(string){}
+    var string = this.noteListView.toHtml();
+    this.addNoteToPage(string);
   };
 
-  NoteController.prototype.addNoteToPage = function(html) {
-    document.getElementById("app").innerHTML = html
+  NoteController.prototype.addNoteToPage = function(newText) {
+    document.getElementById("app").innerHTML = newText;
   };
 
   exports.NoteController = NoteController;
