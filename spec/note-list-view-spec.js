@@ -5,7 +5,6 @@ function testNoteListView() {
   assert.isTrue(noteListView.noteList == noteList)
 };
 
-
 testNoteListView();
 
 function testoHTML() {
