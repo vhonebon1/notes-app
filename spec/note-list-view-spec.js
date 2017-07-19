@@ -19,15 +19,16 @@ testoHTML();
 
 function testoMultipleHTML() {
   var note = new Note("Note message");
-  var note = new Note("Please fucking work");
+  var note2 = new Note("Please fucking work");
   var noteList = new NoteList();
+  noteList.pushToNoteModels(note);
+  noteList.pushToNoteModels(note2);
   var noteListView = new NoteListView(noteList);
-  noteList3.pushToNoteModels(note);
-  noteList3.pushToNoteModels(note);
+  console.log(noteListView.toHtml())
   assert.isTrue(noteListView.toHtml() === "<ul><li><div>Note message</div></li><li><div><li><div>Please fucking work</div></li><li><div></ul>")
 }
 
-testoHTML();
+testoMultipleHTML();
 
 function testtoHtmlNoNoteModels() {
   var noteList = new NoteList();
