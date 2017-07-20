@@ -8,11 +8,11 @@ function testNoteListView() {
 testNoteListView();
 
 function testoHTML() {
-  var note = new Note("Note message");
+  var note = new Note("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
   var noteList = new NoteList();
   var noteListView = new NoteListView(noteList);
   noteList.pushToNotes(note);
-  assert.isTrue(noteListView.toHtml() == "<ul><li><div>Note message</div></li></ul>")
+  assert.isEquals(noteListView.toHtml(), "<ul><li><div>Lorem ipsum dolor si</div></li></ul>")
 }
 
 testoHTML();
