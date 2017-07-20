@@ -17,6 +17,7 @@ function testPushToNotes() {
   var noteList = new NoteList();
   noteList.pushToNotes(note);
   assert.isTrue(noteList.notes.length === 1);
+  assert.isTrue(noteList.notes[0].id === 0);
 };
 
 testPushToNotes();
