@@ -3,7 +3,7 @@ var assert = {
     if (!(first === second)) {
       throw new Error ("Test failed: " + first + " is not equal to " + second)
     } else {
-      return "Test passed"
+      console.log("Test passed")
     }
   },
 
@@ -11,7 +11,7 @@ var assert = {
     if (element === null) {
       throw new Error ("Test failed: " + element + " is null")
     } else {
-      return "Test passed"
+      console.log("Test passed")
     }
   },
 

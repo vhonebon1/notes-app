@@ -23,7 +23,6 @@
   };
 
   NoteController.prototype.addNoteToPage = function(newText) {
-    console.log(document.getElementById(this.id_element))
     document.getElementById(this.id_element).innerHTML = newText;
   };
 
