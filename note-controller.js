@@ -1,5 +1,6 @@
 (function(exports) {
-  function NoteController() {
+  function NoteController(id_element) {
+    this.id_element = id_element
     this.noteList = new NoteList()
     this.noteListView = null
   };
@@ -22,7 +23,8 @@
   };
 
   NoteController.prototype.addNoteToPage = function(newText) {
-    document.getElementById("app").innerHTML = newText;
+    console.log(document.getElementById(this.id_element))
+    document.getElementById(this.id_element).innerHTML = newText;
   };
 
   exports.NoteController = NoteController;
