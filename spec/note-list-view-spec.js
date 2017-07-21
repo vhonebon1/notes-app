@@ -11,7 +11,7 @@
   
   function testConvertToHTML() {
     noteList.pushToNotes(note);
-    assert.isEquals(noteListView.convertToHtml(), "<ul><li><div id='0'>Lorem ipsum dolor si</div></li></ul>")
+    assert.isEquals(noteListView.convertToHtml(), "<ul><li><div><a href=\"#notes/0\">Lorem ipsum dolor si</a></div></li></ul>")
   }
   
   testConvertToHTML();
@@ -19,7 +19,7 @@
   function testoMultipleHTML() {
     var note2 = new Note("Please work");
     noteList.pushToNotes(note2);
-    assert.isTrue(noteListView.convertToHtml() === "<ul><li><div id='0'>Lorem ipsum dolor si</div></li><li><div id='1'>Please work</div></li></ul>")
+    assert.isTrue(noteListView.convertToHtml() === "<ul><li><div><a href=\"#notes/0\">Lorem ipsum dolor si</a></div></li><li><div><a href=\"#notes/1\">Please work</a></div></li></ul>")
   }
   
   testoMultipleHTML();

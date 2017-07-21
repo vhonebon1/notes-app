@@ -16,7 +16,7 @@
     var dummyElement = document.createElement("div");
     dummyElement.innerHTML = "the dummy text"
     controller.addNoteToPage(dummyElement);
-    assert.isEquals(dummyElement.innerHTML, "<ul><li><div id=\"0\">A new note</div></li></ul>");
+    assert.isEquals(dummyElement.innerHTML, "<ul><li><div><a href=\"#notes/0\">A new note</a></div></li></ul>");
   };
   
   testAddToPage();

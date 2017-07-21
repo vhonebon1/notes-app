@@ -19,7 +19,7 @@
   }
   
   function _addTagsForOneNote(note) {
-    return "<li><div id='" + note.getId() + "'>"+ note.getAbbreviatedText() + "</div></li>"
+    return "<li><div><a href=\"#notes/" + note.getId() + "\">"+ note.getAbbreviatedText() + "</a></div></li>"
   };
   
   function _addClosingHtmlTags(htmlString) {
