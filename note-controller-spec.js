@@ -1,30 +1,24 @@
-function testControllerAttributes() {
+(function() {
+  var note = new Note("A new note")
+  var notelist = new NoteList();
+  notelist.pushToNotes(note);
+  var controller = new NoteController(notelist);
 
-  var controller = new NoteController;
-
-  assert.isNotNull(controller.noteList)
-  assert.isTrue(controller.noteListView === null)
+  function testControllerAttributes() {
+    assert.isNotNull(controller.noteList)
+    assert.isNotNull(controller.noteListView)
 };
 
 testControllerAttributes();
 
 
-// function testAddToPage() {
-//
-//   var dummyElement = document.createElement("div");
-//   var controller = new NoteController("fakeId");
-//   dummyElement.id = controller.id_element
-//   console.log(dummyElement)
-//   console.log(document)
-//   document = "<html><head></head><body></body></html>"
-//   body = "<body></body>"
-//   document.appendChild(dummyElement)
-//
-//   controller.setNoteList();
-//   controller.setNoteListView();
-//   controller.getNLVHtml();
-//
-//   assert.isEquals(document.getElementById("fakeId").innerHTML, "<ul><li><div>favourite drink</div></li></ul>")
-// };
-//
-// testAddToPage();
+function testAddToPage() {
+
+  var dummyElement = document.createElement("div");
+  dummyElement.innerHTML = "the dummy text"
+  controller.addNoteToPage(dummyElement);
+  assert.isEquals(dummyElement.innerHTML, "<ul><li><div id=\"0\">A new note</div></li></ul>");
+};
+
+testAddToPage();
+})();

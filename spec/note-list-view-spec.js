@@ -19,12 +19,12 @@ testConvertToHTML();
 
 function testoMultipleHTML() {
   var note = new Note("Note message");
-  var note2 = new Note("Please fucking work");
+  var note2 = new Note("Please work");
   var noteList = new NoteList();
   noteList.pushToNotes(note);
   noteList.pushToNotes(note2);
   var noteListView = new NoteListView(noteList);
-  assert.isTrue(noteListView.convertToHtml() === "<ul><li><div id='0'>Note message</div></li><li><div id='1'>Please fucking work</div></li></ul>")
+  assert.isTrue(noteListView.convertToHtml() === "<ul><li><div id='0'>Note message</div></li><li><div id='1'>Please work</div></li></ul>")
 }
 
 testoMultipleHTML();
