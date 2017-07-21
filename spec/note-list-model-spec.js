@@ -1,32 +1,31 @@
-function testNoteList() {
+(function() {
   var noteList = new NoteList();
-  assert.isTrue(Array.isArray(noteList.notes));
-};
-
-testNoteList();
-
-function testGetNotes() {
-  var noteList = new NoteList();
-  assert.isTrue(noteList.getNotes().length === 0);
-};
-
-testGetNotes();
-
-function testPushToNotes() {
   var note = new Note("Too sexy to code");
-  var noteList = new NoteList();
-  noteList.pushToNotes(note);
-  assert.isTrue(noteList.notes.length === 1);
-  assert.isTrue(noteList.notes[0].id === 0);
-};
-
-testPushToNotes();
-
-function testGetTexts() {
-  var note = new Note("Too sexy to code");
-  var noteList = new NoteList();
-  noteList.pushToNotes(note);
-  assert.isTrue(noteList.getTexts().toString() === "Too sexy to code")
-};
-
-testGetTexts();
+  
+  
+  function testNoteList() {
+    assert.isTrue(Array.isArray(noteList.notes));
+  };
+  
+  testNoteList();
+  
+  function testGetNotes() {
+    assert.isTrue(noteList.getNotes().length === 0);
+  };
+  
+  testGetNotes();
+  
+  function testPushToNotes() {
+    noteList.pushToNotes(note);
+    assert.isTrue(noteList.notes.length === 1);
+    assert.isTrue(noteList.notes[0].id === 0);
+  };
+  
+  testPushToNotes();
+  
+  function testGetTexts() {
+    assert.isTrue(noteList.getTexts().toString() === "Too sexy to code")
+  };
+  
+  testGetTexts();
+})();
