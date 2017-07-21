@@ -1,27 +1,24 @@
 window.onload = function() {
-  var element = document.getElementById("app")
   var note = new Note("test note")
   var notelist = new NoteList()
   notelist.pushToNotes(note);
   var controller = new NoteController(notelist)
+  
+  var element = document.getElementById("app")
   controller.addNoteToPage(element)
-
+  
   makeURLChangeShowIndividualNote()
-
+  
   function makeURLChangeShowIndividualNote() {
     window.addEventListener("hashchange", showIndividualNote);
   }
-
+  
   function showIndividualNote() {
-    showNote(getNoteIdFromUrl(window.location));
+    controller.showNote(getNoteIdFromUrl(window.location), element);
   }
-
+  
   function getNoteIdFromUrl(location) {
     return location.hash.split("#")[1].split("/")[1]
   }
-
-  function showNote(id) {
-    var singleView = new SingleView(notelist.notes[id])
-    element.innerHTML = singleView.getText()
-  }
+  
 }
